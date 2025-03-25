@@ -1,0 +1,378 @@
+/* 活動列表頁 */
+.b-container {
+  --swiper-navigation-sides-offset: 1em;
+
+  padding-inline: 4em;
+
+  @media screen and (max-width: 576px) {
+    padding-inline: 16px !important;
+  }
+}
+
+.b-table-page {
+  --swiper-pagination-bottom: 1.8em;
+}
+
+.b-header-padding {
+  padding-top: 127px !important; // header空間
+}
+
+.b-swiper {
+  height: 500px;
+  opacity: 0.9;
+  @media screen and (max-width: 576px) {
+    height: 210px;
+  }
+
+  .b-swiper-text {
+    top: 50%;
+    left: 6%;
+    transform: translateY(-50%);
+    z-index: 5;
+
+    .b-swiper-title {
+      color: var(--grey50);
+      font-family: Poppins;
+      font-size: 3.5em;
+      font-weight: 700;
+      text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.9);
+    }
+
+    .b-swiper-subtitle {
+      color: var(--grey50);
+      font-family: 'Noto Sans TC';
+      font-size: 2.25em;
+      font-weight: 500;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+    }
+  }
+
+  .swiper-pagination-bullet {
+    background-color: rgba(255, 255, 255);
+    @media screen and (max-width: 576px) {
+      width: 8px;
+      height: 8px;
+    }
+  }
+
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    color: rgba(255, 255, 255, 0.7);
+
+    @media screen and (max-width: 576px) {
+      font-size: 25px;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .b-hero {
+    height: 250px;
+  }
+}
+
+.b-filter-bar {
+  padding-block: 1.25em;
+  border-top: 1px solid var(--grey100);
+
+  h4 {
+    color: var(--grey500);
+  }
+
+  .b-filters {
+    gap: 4em;
+
+    @media screen and (max-width: 576px) {
+      gap: 2.4em;
+    }
+
+    .b-filter,
+    .b-order {
+      border: none;
+      background-color: white;
+      gap: 0.75em;
+    }
+  }
+}
+
+.b-filter-slide {
+  z-index: 101;
+  width: 37.5em;
+
+  /* 側邊欄滾動 */
+  height: 100vh;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* 側邊欄滾動 */
+  padding: 3em;
+  background: white;
+}
+
+.b-filter-title {
+  padding: 1.5em 0em 3em 0em;
+
+  i {
+    font-size: 1.5em;
+  }
+}
+
+.b-filter-conds {
+  gap: 3em;
+
+  .b-cond-title {
+    padding-bottom: 1.5em;
+    margin-bottom: 1.5em;
+    border-bottom: 1px solid var(--grey200);
+  }
+
+  h6 {
+    font-weight: 600;
+    /* reset */
+    margin-bottom: 0;
+  }
+
+  .b-form-checkbox {
+    margin-bottom: 1.5em;
+
+    input {
+      margin-right: 1em;
+      width: 1.5em;
+      height: 1.5em;
+      border-radius: 0.125em;
+      border: 1px solid var(--black);
+    }
+  }
+
+  .b-slide-bar {
+    height: 0.375em;
+    background-color: var(--grey200);
+    border-radius: 75px;
+
+    .b-toggle {
+      width: 1.375em;
+      height: 1.375em;
+      background-color: white;
+      border: 1px solid var(--grey700);
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+      border-radius: 50%;
+      top: 50%;
+      left: 30%;
+      transform: translate(0, -50%);
+    }
+  }
+
+  .b-form-date,
+  .b-form-select {
+    margin-bottom: 1.5em;
+  }
+
+  input[type='date'],
+  select {
+    padding: 0.75em;
+  }
+
+  .btn {
+    margin-top: 0em;
+    margin-bottom: 2.5em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .b-filter-slide {
+    width: 100%;
+  }
+}
+
+.b-act-list {
+  padding-top: 1em;
+  padding-bottom: 3.5em;
+
+  .card {
+    background: var(
+      --gradient-grey1,
+      radial-gradient(
+        129.27% 141.42% at -41.69% -31.49%,
+        #e5e5e5 0%,
+        #f9f9f9 100%
+      )
+    );
+
+    img {
+      max-height: 24em;
+      @media screen and (max-width: 576px) {
+        max-height: 12em;
+      }
+    }
+
+    .card-body {
+      gap: 2.5em;
+      padding: 1.5em;
+
+      .b-text {
+        gap: 0.4em;
+
+        .card-title {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+        }
+
+        h4 {
+          color: #2f97c6;
+        }
+      }
+    }
+  }
+
+  .b-load-btn {
+    margin-top: 4em;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .b-act-list {
+    padding-top: 2em;
+
+    .card {
+      .card-body {
+        padding: 1.2em;
+
+        .b-text {
+          gap: 0.25em;
+        }
+      }
+    }
+  }
+}
+
+/* ----- 改變字體大小，活動路由 : 列表、詳細頁面 ------ */
+.b-table-page,
+.b-detail-page {
+  @media screen and (max-width: 576px) {
+    font-size: 10px;
+  }
+
+  .card {
+    // 還原 bootstrap 預設，避免被 bootstrap.scss 覆蓋
+    border: 1px solid #dee2e6;
+  }
+
+  h1 {
+    font-size: 2em !important; /* 32px */
+  }
+
+  h2 {
+    font-size: 1.5em !important; /* 24px */
+  }
+
+  h3 {
+    font-size: 1.25em !important; /* 20px */
+  }
+
+  h4 {
+    font-size: 1.125em !important; /* 18px */
+  }
+
+  h5 {
+    font-size: 1em !important; /* 16px */
+  }
+
+  h6 {
+    font-size: 0.875em !important; /* 14px */
+  }
+
+  p {
+    font-size: 0.75em !important; /* 12px */
+  }
+
+  /* eng */
+  .h1 {
+    font-size: 2em !important; /* 32px */
+  }
+
+  .h2 {
+    font-size: 1.75em !important; /* 28px */
+  }
+
+  .h3 {
+    font-size: 1.5em !important; /* 24px */
+  }
+
+  .h4 {
+    font-size: 1.375em !important; /* 22px */
+  }
+
+  .h5 {
+    font-size: 1.125em !important; /* 18px */
+  }
+
+  .h6 {
+    font-size: 1em !important; /* 16px */
+  }
+
+  .h7 {
+    font-size: 0.875em !important; /* 14px */
+  }
+
+  .p {
+    font-size: 0.75em !important; /* 12px */
+  }
+}
+
+/* ----- 活動路由通用  ------ */
+@media screen and (max-width: 576px) {
+  .b-sm-none {
+    display: none;
+  }
+}
+
+.b-title {
+  padding-top: 3.5em;
+  padding-bottom: 1.25em;
+  gap: 0.25em;
+}
+
+.b-btn {
+  padding: 0.5em 1em;
+  border-radius: var(--button-rounded-radius, 6.25em);
+  border: 1px solid var(--black);
+  color: var(--black);
+  text-align: center;
+  align-self: flex-start;
+  font-weight: 400;
+
+  &:hover {
+    color: white;
+    background-color: #000;
+  }
+}
+
+.b-tag {
+  padding: 0.1em 0.5em;
+  border: 1px solid #000;
+  text-align: center;
+  align-self: flex-start;
+}
+
+.b-load-btn {
+  margin-inline: auto;
+  width: 15em;
+  padding: 0.75em;
+  align-content: center;
+  align-self: center;
+  background-color: white;
+}
+
+/* reset css*/
+.b-btn-unstyled {
+  border: none;
+  background-color: white;
+  padding: 0;
+}
+
+a {
+  color: black;
+}

@@ -1,0 +1,23 @@
+"use client";
+
+import ActivityCardBase from './ActivityCardBase';
+
+export default function ActivityCard({ data, mapIndex }) {
+  return (
+    <ActivityCardBase
+    mapIndex={mapIndex}
+      data={data}
+      imageSize={{ col: 4, lg: 6 }}
+      showCategory={true}
+      showLocation={true}
+    >
+      <a
+        className="b-btn b-sm-none"
+        href={`https://www.google.com/maps?q=${data?.city}${data?.dist}${data?.address}`}
+        target="_blank"
+      >
+        查看地圖 <i className="ms-2 fa-solid fa-location-arrow" />
+      </a>
+    </ActivityCardBase>
+  );
+}

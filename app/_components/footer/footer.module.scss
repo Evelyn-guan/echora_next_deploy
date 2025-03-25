@@ -1,0 +1,118 @@
+.footer {
+  width: 100%;
+  padding-inline: 64px;
+  margin-top: 90px;
+  background: rgba(255, 255, 255, 0.4);
+  /* blur60 */
+  backdrop-filter: blur(30px);
+  border-top: 1px solid var(--grey-100, #dadada);
+
+  @media screen and (max-width: 768px) {
+    padding-inline: 16px;
+    margin-top: 60px;
+  }
+
+  ul {
+    margin: 0;
+    // display: flex;
+    // width: 100%;
+    // height: auto;
+    // gap: 50px;
+    padding-block: 32px;
+    align-items: start;
+
+    li {
+      font-weight: bold;
+      margin-bottom: 10px;
+      padding: 0;
+
+      div {
+        cursor: pointer;
+      }
+
+      // :last-child {
+      //   margin-bottom: 2rem;
+      // }
+
+      div {
+        margin-top: 0.8rem;
+      }
+
+      .email {
+        cursor: default;
+        width: 75%;
+
+        .group {
+          display: flex;
+          align-items: center;
+          height: 1.5rem;
+        }
+
+        input {
+          font-family: 'Poppins', 'Noto Sans TC', sans-serif;
+          font-size: 13px;
+          padding: 0;
+          margin: 0;
+          width: 100%;
+          border: none;
+          &:focus{
+            outline: none;
+          }
+        }
+      }
+     
+    }
+    .icons {
+      gap: 10px;
+      width: auto;
+      height: auto;
+      display: flex;
+      align-items: start;
+      justify-items: center;
+      cursor: default;
+
+      i {
+          cursor: pointer;
+      }
+  }
+  }
+
+  .mise {
+    // position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    border-top: 1px solid var(--grey-100, #dadada);
+
+    p {
+      margin: 0;
+      // position: absolute;
+      // text-align: center;
+      // top: 1.5rem;
+      // left: 0;
+
+      // @media (max-width: 776px) {
+      //   width: 300px;
+      //   top: 60px;
+      //   left: 50%;
+      //   transform: translate(-50%,-50%);
+      // }
+    }
+
+    .k-btn {
+      position: absolute;
+      left: 50%;
+      margin-bottom: .5rem;
+      transform: translate(-50%);
+      border-radius: 100px;
+      padding-inline: 1rem;
+      padding-block: 0.5rem;
+      /* mobile */
+      @media (max-width:576px) {
+        width: 100%;
+    }
+    }
+  }
+}
+
