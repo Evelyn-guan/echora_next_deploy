@@ -313,3 +313,8 @@
         width: 100%;
     }
 }
+
+.k-Swiper .swiper-pagination-bullet-active {
+    background-color: white !important; /* 被選中時變白色 */
+    opacity: 1;
+  }

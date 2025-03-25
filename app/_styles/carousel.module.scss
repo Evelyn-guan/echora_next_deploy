@@ -8,7 +8,18 @@
 }
 
 /* Swiper 分頁點 */
-:global(.swiper-pagination-bullet-active) {
+// :global(.swiper-pagination-bullet-active) {
+//   background-color: white !important; /* 被選中時變白色 */
+//   opacity: 1;
+// }
+.swiperContainer :global(.swiper-pagination-bullet-active) {
   background-color: white !important; /* 被選中時變白色 */
   opacity: 1;
 }
+
+// :global {
+//   .swiper-pagination-bullet-active {
+//     background-color: white !important;
+//     opacity: 1;
+//   }
+// }
