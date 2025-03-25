@@ -152,7 +152,6 @@ export default function AdminActivityState() {
       }))
     } else if (type === 'uploading') {
       // 若刪除上傳中的，要重置檔案輸入框
-      // document.querySelector('#addImage').value = null
     }
   }
 
