@@ -116,7 +116,7 @@ export default function CouponPage() {
               <div className="k-content">
                 <div className="title flex-column">
                   <div>SPECIAL OFFER</div>
-                  <span>共襄盛舉音樂節 最高可折五百元優惠券</span>
+                  <span>共襄盛舉音樂節 領取五百元優惠券</span>
                 </div>
                 <div className="title flex-column">
                   <Link href="/my-user">
