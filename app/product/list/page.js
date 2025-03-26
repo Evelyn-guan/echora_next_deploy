@@ -3,7 +3,6 @@ import './list.scss'
 import ProductCard from '../_components/product-card'
 import FilterBar from '../_components/filter-bar'
 
-import { useSearchParams } from 'next/navigation'
 import { useRouter } from 'next/navigation'
 import { useState, useEffect, useRef } from 'react'
 import { useProductState } from '@/services/rest-client/use-products'
@@ -309,6 +308,14 @@ export default function ProductListPage(props) {
 
   // console.log(criteria)
 
+  // if (!pdData.length) {
+  //   return (
+  //     <>
+  //       <h5 className="h5 g-loading text-center">loading...</h5>
+  //     </>
+  //   )
+  // }
+
   return (
     <>
       <div className="g-pdlist-bar" style={{top: isVisible ? `${headerHeight}px` : '0px'}}>
@@ -510,7 +517,7 @@ export default function ProductListPage(props) {
       >
         <div className="container-fluid p-0">
           <div className="d-flex justify-content-between align-items-center">
-            <div className>
+            <div>
               <h6 className="h6">Electric Guitar Comparision</h6>
               <h6 className="mb-0">電吉他商品比較</h6>
             </div>
@@ -524,6 +531,7 @@ export default function ProductListPage(props) {
               <div className="g-compare-boxes d-flex gap-3">
                 {selectedProducts.map((selectedProduct, index) => (
                   <div
+                    key={index}
                     className="g-compare-box d-flex justify-content-center align-items-center position-relative"
                     onDragOver={(e) => e.preventDefault()}
                     onDrop={(e) => handleDrop(e, index)}

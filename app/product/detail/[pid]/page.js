@@ -49,10 +49,11 @@ export default function ProductDetailIdPage() {
   // 取得網址上的動態參數
   const params = useParams()
   const pid = Number(params.pid)
-  const getDetailData = async () => {
+
+  const getDetailData = async (SkuId) => {
     try {
       const res = await fetch(
-        `http://localhost:3005/api/products/${pid}/${firstSkuId}`
+        `http://localhost:3005/api/products/${pid}/${SkuId}`
       )
       const data = await res.json()
       // 資料整理
@@ -218,7 +219,7 @@ export default function ProductDetailIdPage() {
   const getMayLikeData = async (colorId) => {
     try {
       const res = await fetch(
-        `http://localhost:3005/api/products/maylike/${colorId}`
+        `http://localhost:3005/api/products/maylike/${colorId}/${pid}`
       )
       const data = await res.json()
       setMayLikeData(data.data)
@@ -229,9 +230,18 @@ export default function ProductDetailIdPage() {
 
   //didmount後執行getDetailData()
   useEffect(() => {
-    getDetailData()
+    // localStorage.getItem() 是一個 同步函式（synchronous），它會 立刻回傳值，
+    // 而且是在瀏覽器渲染完、執行 useEffect 的時候才跑，不用擔心會「來不及拿到」的問題。
+    const savedSkuId = localStorage.getItem('firstSkuId')
+    // 把firstSkuId存在localstorage裡
+    if(firstSkuId){
+      localStorage.setItem('firstSkuId', firstSkuId)
+    }
+
     const storedUid = localStorage.getItem('userId')
     setUid(storedUid)
+
+    getDetailData(firstSkuId || savedSkuId)
   }, [firstSkuId])
 
   useEffect(() => {
@@ -310,7 +320,6 @@ export default function ProductDetailIdPage() {
                   </div>
                   <div className="g-color-balls d-flex">
                     {detailData[0]?.colors.map((color) => (
-                      <>
                         <button
                           key={color.skuId}
                           className={
@@ -329,7 +338,6 @@ export default function ProductDetailIdPage() {
                             alt={color.name}
                           />
                         </button>
-                      </>
                     ))}
                   </div>
                 </div>

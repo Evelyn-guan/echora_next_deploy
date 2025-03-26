@@ -63,9 +63,9 @@ export default function ProductCard({ data = {}, handleDragStart }) {
             )}
           </div>
           <div className={styles['g-color-row']}>
-            {data.colors.map((color) => (
+            {data.colors.map((color, i) => (
               <div
-                key={color.id}
+                key={i}
                 onMouseEnter={() => setMainImage(data.images[color.skuId])}
                 onMouseLeave={() => setMainImage(data.image)}
               >
