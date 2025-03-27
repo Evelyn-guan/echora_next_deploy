@@ -15,7 +15,8 @@ const local = {
 
 // 營運環境設定(部署至Vercel)
 const production = {
-  apiURL: 'https://xxxxx.vercel.app/api',
+  apiURL: `${process.env.NEXT_PUBLIC_API_BASE}/api`,
+  // apiURL: 'https://xxxxx.vercel.app/api',
   serverURL: 'https://xxxxx.vercel.app',
   avatarURL: 'https://xxxxx.vercel.app/avatar',
   nextUrl: 'https://xxxxx.vercel.app',

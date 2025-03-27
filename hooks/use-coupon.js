@@ -23,7 +23,7 @@ export function MyCouponProvider({ children }) {
     const userId = getUserId()
     try {
       // http://localhost:3005/api/coupon/resource
-      const res = await fetch(`http://localhost:3005/api/coupon/${userId}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/coupon/${userId}`, {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',
@@ -46,7 +46,7 @@ export function MyCouponProvider({ children }) {
   const claimCoupons = async () => {
     const userId = getUserId()
     try {
-      const res = await fetch(`http://localhost:3005/api/coupon/${userId}/all`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/coupon/${userId}/all`, {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',
@@ -187,7 +187,7 @@ export function MyCouponProvider({ children }) {
   const clear = async (userId) => {
     try {
       // http://localhost:3005/api/coupon/resource
-      const res = await fetch(`http://localhost:3005/api/coupon/`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/coupon/`, {
         method: 'DELETE',
         headers: {
           'Content-type': 'application/json',

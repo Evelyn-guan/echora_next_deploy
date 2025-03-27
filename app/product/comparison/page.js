@@ -38,7 +38,7 @@ export default function ProductComparisonPage() {
     console.log(products)
     try {
       const res = await fetch(
-        `http://localhost:3005/api/products/comparison?products=${products}`
+        `${process.env.NEXT_PUBLIC_API_BASE}/api/products/comparison?products=${products}`
       )
       const data = await res.json()
       setCompareDatas(data.data)

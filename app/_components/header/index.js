@@ -114,7 +114,7 @@ export default function Header() {
 
     const fetchUserProfile = async () => {
       try {
-        const res = await fetch(`http://localhost:3005/api/users/${userId}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/users/${userId}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('userId')}`, // 附帶 token
           },
@@ -138,7 +138,7 @@ export default function Header() {
   // **處理登出（支援 Google + 一般帳號）**
   const handleLogout = async () => {
     try {
-      const res = await fetch('http://localhost:3005/api/users/logout', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/users/logout`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -275,20 +275,20 @@ export default function Header() {
                 </Link>
               </li>
               <li>
-                <Link href="/rent">
-                  <div className="d-flex">
-                    <h6 className="h7">RENTAL SERVICE</h6>
-                    <p className="px-1">/</p>
-                    <p style={{ fontWeight: 500 }}>商品租借</p>
-                  </div>
-                </Link>
-              </li>
-              <li>
                 <Link href="/coupons">
                   <div className="d-flex">
                     <h6 className="h7">SPECIAL EVENTS</h6>
                     <p className="px-1">/</p>
                     <p style={{ fontWeight: 500 }}>特別優惠</p>
+                  </div>
+                </Link>
+              </li>
+              <li>
+                <Link href="/disclaimer">
+                  <div className="d-flex">
+                    <h6 className="h7">DISCLAIMER</h6>
+                    <p className="px-1">/</p>
+                    <p style={{ fontWeight: 500 }}>免責聲明</p>
                   </div>
                 </Link>
               </li>

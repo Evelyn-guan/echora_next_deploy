@@ -75,7 +75,7 @@ export default function UserPage() {
     }
 
     try {
-      const res = await fetch('http://localhost:3005/api/users/login', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/users/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -115,7 +115,7 @@ export default function UserPage() {
       loginGoogle(async (providerData) => {
         console.log(providerData)
 
-        const res = await fetch('http://localhost:3005/api/auth/google-login', {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/auth/google-login`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

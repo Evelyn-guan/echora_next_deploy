@@ -45,7 +45,7 @@ export default function HashTokenPage() {
     }
 
     try {
-      const response = await fetch('http://localhost:3005/api/reset-password', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/reset-password`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

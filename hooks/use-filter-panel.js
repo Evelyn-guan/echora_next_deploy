@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useFetch } from '@/hooks/use-fetch'
 
 export function useFilterPanel() {
-  const { data } = useFetch('http://localhost:3005/api/activities/options')
+  const { data } = useFetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/activities/options`)
 
   const city = [
     '臺北市',

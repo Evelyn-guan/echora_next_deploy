@@ -94,7 +94,7 @@ export default function InformationPage() {
   const fetchUserInf = async () => {
     const userId = localStorage.getItem('userId')
     try {
-      const url = `http://localhost:3005/api/users/${userId}`
+      const url = `${process.env.NEXT_PUBLIC_API_BASE}/api/users/${userId}`
       const res = await fetch(url)
       if (!res.ok) throw new Error('提取資料失敗')
       const data = await res.json()
@@ -366,7 +366,7 @@ export default function InformationPage() {
                 <div className="d-flex align-items-end pt-4 pb-2">
                   <h2 className="h4">取貨方式</h2>
                 </div>
-                <div className="form-check py-3 mb-2">
+                <div className="form-check py-3 mb-2 g-edit">
                   <input
                     type="radio"
                     name="shippingMethod"
@@ -381,7 +381,7 @@ export default function InformationPage() {
                     宅配到府
                   </label>
                 </div>
-                <div className="form-check py-3">
+                <div className="form-check py-3 g-edit">
                   <input
                     type="radio"
                     name="shippingMethod"
@@ -398,7 +398,7 @@ export default function InformationPage() {
                 <div className="d-flex align-items-end pt-4 pb-2">
                   <h2 className="h4">付款方式</h2>
                 </div>
-                <div className="form-check py-3 mb-2">
+                <div className="form-check py-3 mb-2 g-edit">
                   <input
                     type="radio"
                     name="paymentMethod"
@@ -413,7 +413,7 @@ export default function InformationPage() {
                     LINE Pay
                   </label>
                 </div>
-                <div className="form-check py-3 mb-2">
+                <div className="form-check py-3 mb-2 g-edit">
                   <input
                     type="radio"
                     name="paymentMethod"

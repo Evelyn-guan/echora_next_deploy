@@ -12,7 +12,7 @@ const ActivityContext = createContext()
 
 export const ActivityProvider = ({
   children,
-  url = 'http://localhost:3005/api/activities',
+  url = `${process.env.NEXT_PUBLIC_API_BASE}/api/activities`,
 }) => {
   const [acts, setActs] = useState(null)
 

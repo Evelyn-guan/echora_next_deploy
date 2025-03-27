@@ -185,7 +185,8 @@ export default function ProductListPage(props) {
   const getPdData = async (queryString) => {
     try {
       const res = await fetch(
-        `http://localhost:3005/api/products?${queryString}`
+        `${process.env.NEXT_PUBLIC_API_BASE}/api/products?${queryString}`
+        // `http://localhost:3005/api/products?${queryString}`
       )
       const data = await res.json()
       const finalData = await convertData(data.data)

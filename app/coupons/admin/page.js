@@ -27,7 +27,7 @@ const CouponAdminTable = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const url = 'http://localhost:3005/api/coupon'
+        const url = `${process.env.NEXT_PUBLIC_API_BASE}/api/coupon`
         const res = await fetch(url)
         if (!res.ok) throw new Error('狀態錯誤')
         const data = await res.json()
@@ -142,7 +142,7 @@ const CouponAdminTable = () => {
     // const userId = getUserId() 改成管理員
     try {
       // http://localhost:3005/api/coupon/resource
-      const res = await fetch(`http://localhost:3005/api/coupon/admin`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/coupon/admin`, {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',
@@ -166,7 +166,7 @@ const CouponAdminTable = () => {
 
     try {
       // http://localhost:3005/api/coupon/resource
-      const res = await fetch(`http://localhost:3005/api/coupon/admin`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/coupon/admin`, {
         method: 'PUT',
         headers: {
           'Content-type': 'application/json',
@@ -198,7 +198,7 @@ const CouponAdminTable = () => {
     // const userId = getUserId() 改成管理員
     try {
       // http://localhost:3005/api/coupon/resource
-      const res = await fetch(`http://localhost:3005/api/coupon/admin`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/coupon/admin`, {
         method: 'DELETE',
         headers: {
           'Content-type': 'application/json',

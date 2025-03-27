@@ -37,7 +37,7 @@ export const useProductState = () => useContext(ProductContext)
 
 export const useGetBrands = () => {
   const { data, error, isloading } = useQuery(
-    'http://localhost:3005/api/products/brands'
+    `${process.env.NEXT_PUBLIC_API_BASE}/api/products/brands`
   )
 
   let brands = []
@@ -50,7 +50,7 @@ export const useGetBrands = () => {
 
 export const useGetColors = () => {
   const { data, error, isloading } = useQuery(
-    'http://localhost:3005/api/products/colors'
+    `${process.env.NEXT_PUBLIC_API_BASE}/api/products/colors`
   )
 
   let colors = []
@@ -63,7 +63,7 @@ export const useGetColors = () => {
 
 export const useGetColorPalette = () => {
   const { data, error, isloading } = useQuery(
-    'http://localhost:3005/api/products/colorpalette'
+    `${process.env.NEXT_PUBLIC_API_BASE}/api/products/colorpalette`
   )
 
   let colorpalette = []

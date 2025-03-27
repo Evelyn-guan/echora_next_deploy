@@ -16,7 +16,7 @@ export default function DataTable() {
 
     try {
       const response = await fetch(
-        `http://localhost:3005/api/activities/${activityId}`,
+        `${process.env.NEXT_PUBLIC_API_BASE}/api/activities/${activityId}`,
         {
           method: 'DELETE',
         }

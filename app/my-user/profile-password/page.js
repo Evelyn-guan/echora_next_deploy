@@ -68,7 +68,7 @@ export default function PasswordPage() {
 
     try {
       const res = await fetch(
-        `http://localhost:3005/api/users/${userId}/password`,
+        `${process.env.NEXT_PUBLIC_API_BASE}/api/users/${userId}/password`,
         {
           method: 'PUT',
           headers: {

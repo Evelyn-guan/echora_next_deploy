@@ -12,7 +12,7 @@ export default function ComponentsOrderDetail() {
     const fetchData = async () => {
       try {
         const res = await fetch(
-          `http://localhost:3005/api/myOrders/${orderId}`,
+          `${process.env.NEXT_PUBLIC_API_BASE}/api/myOrders/${orderId}`,
           {
             method: 'get',
             headers: {

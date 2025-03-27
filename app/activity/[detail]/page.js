@@ -27,7 +27,7 @@ export default function ActivityDetailPage() {
 
   // Fetch Data
   const { data: acts, isLoading } = useFetch(
-    `http://localhost:3005/api/activities/`
+    `${process.env.NEXT_PUBLIC_API_BASE}/api/activities/`
   )
   const act = acts?.find((a) => a.id === activityId)
 

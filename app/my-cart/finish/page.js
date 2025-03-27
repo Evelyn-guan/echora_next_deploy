@@ -15,7 +15,7 @@ export default function FinishPage() {
     console.log(couponId)
     const useCoupon = async () => {
       try {
-        const res = await fetch(`http://localhost:3005/api/coupon/`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/coupon/`, {
           method: 'PUT',
           headers: {
             'Content-type': 'application/json',

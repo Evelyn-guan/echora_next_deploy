@@ -51,7 +51,7 @@ export default function ChecklistPage() {
   const fetchUserCoupon = async () => {
     const userId = localStorage.getItem('userId')
     try {
-      const url = `http://localhost:3005/api/coupon/${userId}`
+      const url = `${process.env.NEXT_PUBLIC_API_BASE}/api/coupon/${userId}`
       const res = await fetch(url)
       if (!res.ok) throw new Error('狀態錯誤')
       const data = await res.json()

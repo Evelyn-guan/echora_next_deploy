@@ -75,7 +75,7 @@ export default function IndexSection3(props) {
   const getTrendingData = async () => {
     try {
       const res = await fetch(
-        `http://localhost:3005/api/products/trending`
+        `${process.env.NEXT_PUBLIC_API_BASE}/api/products/trending`
       )
       const data = await res.json()
       const finalData = await convertData(data.data)

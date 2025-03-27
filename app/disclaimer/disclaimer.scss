@@ -1,0 +1,23 @@
+.g-dtitle{
+    padding-top: 180px;
+}
+
+.g-dtext{
+    padding: 28px 285px 0px;
+
+    li{
+        padding-block: 16px;
+        font-weight: 400;
+    }
+
+    @media screen and (max-width: 1200px) {
+        padding-inline: 100px;
+    }
+
+    @media screen and (max-width: 450px) {
+        padding-inline: 48px;
+        li{
+            font-size: 14px;
+        }
+    }
+}

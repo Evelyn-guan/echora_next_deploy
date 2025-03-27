@@ -53,7 +53,7 @@ export default function ProductDetailIdPage() {
   const getDetailData = async (SkuId) => {
     try {
       const res = await fetch(
-        `http://localhost:3005/api/products/${pid}/${SkuId}`
+        `${process.env.NEXT_PUBLIC_API_BASE}/api/products/${pid}/${SkuId}`
       )
       const data = await res.json()
       // 資料整理
@@ -163,7 +163,7 @@ export default function ProductDetailIdPage() {
   }
   const getFav = async (uid) => {
     try {
-      const res = await fetch(`http://localhost:3005/api/favorite/${uid}`)
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/favorite/${uid}`)
       const data = await res.json()
       setFavItems(data.data)
       if (selectedSku && data.data.includes(selectedSku)) {
@@ -179,7 +179,7 @@ export default function ProductDetailIdPage() {
   const addToFav = async (uid, skuid) => {
     try {
       const res = await fetch(
-        `http://localhost:3005/api/favorite/${uid}/${skuid}`,
+        `${process.env.NEXT_PUBLIC_API_BASE}/api/favorite/${uid}/${skuid}`,
         {
           method: 'PUT',
         }
@@ -197,7 +197,7 @@ export default function ProductDetailIdPage() {
   const removeFromFav = async (uid, skuid) => {
     try {
       const res = await fetch(
-        `http://localhost:3005/api/favorite/${uid}/${skuid}`,
+        `${process.env.NEXT_PUBLIC_API_BASE}/api/favorite/${uid}/${skuid}`,
         {
           method: 'DELETE',
         }
@@ -219,7 +219,7 @@ export default function ProductDetailIdPage() {
   const getMayLikeData = async (colorId) => {
     try {
       const res = await fetch(
-        `http://localhost:3005/api/products/maylike/${colorId}/${pid}`
+        `${process.env.NEXT_PUBLIC_API_BASE}/api/products/maylike/${colorId}/${pid}`
       )
       const data = await res.json()
       setMayLikeData(data.data)
