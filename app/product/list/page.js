@@ -196,6 +196,7 @@ export default function ProductListPage(props) {
       console.log(err)
     }
   }
+  console.log('API URL:', process.env.NEXT_PUBLIC_API_BASE)
   // fetch db
   // const [pdData, setPdData] = useState([])
 
